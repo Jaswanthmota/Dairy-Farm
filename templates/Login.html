@@ -1,0 +1,29 @@
+{%extends 'forms_layout.html'%}
+{%block form%}
+<div class="bg-img">
+   <div class="content">
+      <header>Login Form</header>
+      <form action="/login_validate" method="POST">
+         <div class="field">
+            <span class="fa fa-user"></span>
+            <input type="text"  name="email" required placeholder="Enter Email">
+         </div>
+         <div class="field space">
+            <span class="fa fa-lock"></span>
+            <input type="password" name="pass1" class="pass-key" required placeholder="Password">
+            <span class="show">SHOW</span>
+         </div>
+         <div class="pass">
+            <a href="#">Forgot Password?</a>
+         </div>
+         <div class="field">
+            <input type="submit" value="LOGIN">
+         </div>
+      </form>
+      <div class="signup">
+         Don't have account?
+         <a href="/signup">Signup Now</a>
+      </div>
+   </div>
+</div>
+{%endblock%}

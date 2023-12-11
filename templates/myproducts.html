@@ -1,0 +1,28 @@
+{%extends 'layout.html'%}
+{%block content%}
+{%if myproducts=="No products in your cart"%}
+<center><h3 class="my-5">Yor cart is empty</h3></center>
+{%else%}
+<h1 class="text-md-center text-lg-center text-dark fw-bold text-sm-start shadow m-3">My Cart</h1>
+    <div class="container m-5">
+      <div class="row">
+      {%for i in myproducts%}
+      <div class="col md-4">
+      <div class="card my-3 text-center" style="width: 18rem;height: 26rem;">
+        <div class="card-body">
+          <div class="card-text my-2">Farmer Id: {{i[1]}}</div>
+          <div class="card-text">Product Id: {{i[2]}}</div>
+          <img src="{{ url_for('static', filename='images/' + i[3].decode('utf-8')) }}" height="200" width="200" class="my-2" />
+          <div class="card-text">Quantity: {{i[4]}}</div>
+          <div class="card-text my-2">Price: {{i[5]}}</div>
+          
+          <a href="/deletecartandpayment/{{i[2]}}" style="text-decoration: none;">Buy now</a><br>
+          <a href="/deletecart/{{i[2]}}" style="text-decoration: none;">Delete from cart</a>
+        </div>
+      </div>
+      </div>
+      {%endfor%}
+      </div>
+    </div>
+{%endif%}
+{%endblock%}

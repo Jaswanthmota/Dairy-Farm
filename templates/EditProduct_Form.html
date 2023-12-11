@@ -1,0 +1,29 @@
+{%extends 'forms_layout.html'%}
+{%block form%}
+<div class="bg-img">
+   <div class="content" style="width:800px;">
+      <header>Edit The Product</header>
+      <form action="/EditingCaseInDb" method="POST">
+         <div class="field space">
+            <span class="fas fa-gavel"></span>
+            <input type="text"  name="fid" required value="{{x[0]}}" />
+         </div>
+         <div class="field space">
+            <span class="fa fa-user"></span>
+            <input type="text" name="pid" required value="{{x[1]}}" readonly/>
+         </div>
+         <div class="field space">
+           <span class="fas fa-gavel"></span>
+           <input type="text" name="quantity" required value="{{x[3]}}" />
+        </div>
+        <div class="field space">
+           <span class="fa fa-user"></span>
+           <input type="text" name="price" required value="{{x[4]}}"/>
+        </div><br>
+         <div class="field">
+            <input type="submit" value="Edit Product" />
+         </div>
+      </form>
+   </div>
+</div>
+{%endblock%}

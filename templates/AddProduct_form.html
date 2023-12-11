@@ -1,0 +1,33 @@
+{%extends 'forms_layout.html'%}
+{%block form%}
+<div class="bg-img">
+    <div class="content" style="width:800px;">
+       <header>Add a new Product</header>
+       <form action="/AddingProductInDb" method="POST" enctype="multipart/form-data">
+          <div class="field space">
+             <span class="fas fa-gavel"></span>
+             <input type="text"  name="fid" required placeholder="Enter farmer Id" >
+          </div>
+          <div class="field space">
+            <span class="fas fa-gavel"></span>
+            <input type="text"  name="pid" required placeholder="Enter product Id" >
+         </div>
+          <div class="field space">
+             <span class="fa fa-user"></span>
+             <input type="file" name="image" required placeholder="image">
+          </div>
+          <div class="field space">
+            <span class="fas fa-gavel"></span>
+            <input type="text" name="quantity" required placeholder="Quantity">
+         </div>
+         <div class="field space">
+            <span class="fa fa-user"></span>
+            <input type="text" name="price" required placeholder="price">
+         </div><br>
+          <div class="field">
+             <input type="submit" value="Add Product">
+          </div>
+       </form>
+    </div>
+ </div>
+{%endblock%}

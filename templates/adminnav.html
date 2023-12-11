@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light text-white shadow" style="background-color: green;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/adminpanel"><img src="static/images/1.jpeg" alt="" srcset="" height="40" width="40"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/adminpanel">ADMIN PANEL</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          {% if session.admin %}
+          <button class="btn btn-outline-primary text-white" type="submit" style="margin-right:20px;"><a href="/logoutadmin" style="text-decoration: none;color: white;">Log out</a> </button>
+          {%endif%}
+        </form>
+      </div>
+    </div>
+  </nav>
